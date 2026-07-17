@@ -1,0 +1,1028 @@
+
+/* ===== VARIÁVEIS GLOBAIS DO SITE (CORES E PADRÕES) ===== */
+:root {
+  --primary: #21a6ce;
+  --accent: #22c55e;
+  --dark: #111827;
+  --light: #ffffff;
+}
+
+/* ===== RESET E CONFIGURAÇÕES GERAIS ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== CONFIGURAÇÕES BASE DO BODY ===== */
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--dark);
+  background-color: var(--light);
+  line-height: 1.6;
+}
+
+/* ===== LINKS PADRÃO ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== CONTAINER PADRÃO DO SITE ===== */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+
+/* ================= HEADER ================= */
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.header-topo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ===== LOGO DA EMPRESA ===== */
+.logo {
+  height: 225px;
+  width: auto;
+  margin-top: -30px;
+}
+
+/* ===== MENU DE NAVEGAÇÃO ===== */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+/* ===== CTA HEADER (frase + botão) ===== */
+.header-contato {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* tudo alinhado à direita */
+}
+
+.header-contato .hero-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: -10px;     /* sobe a frase */
+  margin-bottom: 6px;   /* aproxima do botão */
+}
+
+.header-contato .whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background-color: #22c55e;
+  color: #ffffff;
+
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  margin-right: 18px; /* 👈 move o botão mais pra esquerda */
+
+  animation: pulse-whatsapp 1.6s infinite;
+}
+
+/* efeito ao passar o mouse */
+.header-contato .whatsapp-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(34, 197, 94, 0.35);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  position: relative;
+  min-height: 500px;
+  margin-top: -40px;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ================= HERO / BANNER PRINCIPAL ================= */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* overlay escuro */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ===== CONTEÚDO DE TEXTO DO HERO ===== */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 10rem;
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  margin-bottom: 1.5rem;
+}
+
+
+/* ===== SETAS DE NAVEGAÇÃO DO SLIDER ===== */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  width: 44px;
+  height: 44px;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: 24px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+
+/* ================= SEÇÃO DE SERVIÇOS (CARDS) ================= */
+.services {
+  padding: 4rem 0;
+  background: linear-gradient(to bottom, #e6f4fa, #00c4f2);
+}
+
+.services .container h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #1c66a3;
+  text-align: center;
+
+  margin-bottom: 3rem; /* espaço antes dos cards */
+  padding: 22px 0;
+
+  position: relative;
+}
+
+/* faixas decorativas */
+.services .container h3::before,
+.services .container h3::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 1.5px;
+  background: #1c66a3;
+  opacity: 0.8;
+}
+
+/* faixa superior */
+.services .container h3::before {
+  top: 0;
+}
+
+/* faixa inferior */
+.services .container h3::after {
+  bottom: 0;
+}
+
+/* ===== GRADE DE CARDS ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ===== CARD INDIVIDUAL ===== */
+.card {
+  min-height: 440px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* imagem no topo */
+.card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+/* corpo do card */
+.card-body {
+  padding: 1.5rem 1.25rem;
+}
+
+.card-body h4 {
+  text-align: center;
+  margin-bottom: 1.1rem;
+  font-size: 1.5rem;
+  color: #1c66a3;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* footer com botão separado */
+.card-footer {
+  padding: 1rem;
+  margin-top: auto; /* empurra o botão pro fim */
+  text-align: center;
+}
+
+/* ===== BOTÃO DENTRO DO CARD ===== */
+.card-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--primary, #0082aa);
+  color: white;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card-btn:hover {
+  background: #006688;
+}
+
+
+.card p {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: #000000;
+}
+
+
+/* ================= SEÇÃO SOBRE / ABOUT ================= */
+.about {
+  background: #f1f5f9;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+/* ===== DOTS ===== */
+
+.dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #2292ee;
+}
+
+/* ===== ANIMAÇÃO WHATSAPP ===== */
+
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(34, 197, 94, 0);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .slide {
+    background-position: center 40%;
+  }
+}
+
+.hero-content h2 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroTitleIn 1.5s ease-out forwards;
+}
+
+.hero-content p {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroTextIn 1.5s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes heroTitleIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroTextIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= HERO DAS PÁGINAS INTERNAS ================= */
+.hero-interna {
+  min-height: 70vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+/* overlay escuro */
+.hero-interna::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-interna .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-interna h2,
+.hero-interna p {
+  color: #fff;
+}
+
+/* ================= SEÇÃO "POR QUE ESCOLHER" ================= */
+.why-choose-us {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.why-container {
+  width: 100%;
+  display: flex;
+  align-items: stretch; /* FAZ OS DOIS LADOS TEREM A MESMA ALTURA */
+}
+
+/* METADE ESQUERDA — IMAGEM */
+.why-image {
+  width: 50%;
+}
+
+.why-image img {
+  width: 100%;
+  height: 100%;       /* imagem acompanha a altura do texto */
+  object-fit: cover;  /* preenche sem distorcer */
+  display: block;
+}
+
+/* METADE DIREITA — TEXTO */
+.why-content {
+  width: 50%;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribui título no topo e último item no fim */
+}
+
+/* TÍTULO */
+.why-content h2 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+/* INTRO */
+.why-intro {
+  font-size: 1.05rem;
+  color: #000000;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* LISTA */
+.why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ITENS */
+.why-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #41d8fa;
+  padding: 16px 18px;
+  border-radius: 12px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.why-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.why-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.why-item h4 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: #222;
+}
+
+.why-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #000000;
+  line-height: 1.5;
+}
+
+/* ================= SEÇÃO LOCALIZAÇÃO / ENDEREÇO ================= */
+.location-section {
+  padding: 100px 20px;
+  background: rgb(255, 255, 255);
+}
+
+.location-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.location-info {
+  text-align: center;
+}
+
+.location-tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(33,166,206,0.12);
+  color: #1b8db1;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.location-info h2 {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+}
+
+.address {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.location-actions {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  align-items: center;
+}
+
+.btn-whatsapp {
+  background: #22c55e;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 20px 40px rgba(34,197,94,0.35);
+}
+
+.btn-instagram {
+  color: #020202;
+  font-weight: 500;
+}
+
+/* ===== BLOCO DO MAPA COM EFEITO HOVER ===== */
+.location-address {
+  background: 
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("../img/mapa.jpg") center/cover no-repeat;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+
+  padding-top: 100px;
+  padding-bottom: 80px;
+  text-align: center;
+  color: #fff;
+  border-radius: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+.location-icon {
+  width: 34px;
+  height: 34px;
+  color: #ffffff;
+}
+
+
+.location-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+/* ===== REDES SOCIAIS ABAIXO DO MAPA ===== */
+.location-social {
+  text-align: center;
+  padding: 50px 20px 0;
+}
+
+.location-text {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+
+.location-section {
+  padding-top: 0px;
+}
+
+
+.location-social {
+  text-align: center;
+  padding: 50px 20px 20px;
+}
+
+.location-text {
+  font-size: 1.15rem;
+  margin-bottom: 26px;
+}
+
+.location-click {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.location-click:hover .location-address {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  filter: brightness(1.05);
+}
+
+.services-title {
+  text-align: center;
+  font-size: 2.1rem;
+  margin-bottom: 48px;
+
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.services-title.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ===== ANIMAÇÃO DO TÍTULO DOS SERVIÇOS ===== */
+.services .container h3.slide-in {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.services .container h3.slide-in.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ================= PÁGINAS INTERNAS DE SERVIÇOS ================= */
+.pagina-servico {
+  padding-top: -50px;
+  padding: 60px 20px;
+  background: white;
+}
+
+.titulo-servico {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 50px;
+  color: var(--primary);
+}
+
+.titulo-servico h1 {
+  background: #ffffff;
+}
+
+/* ===== BLOCOS DE CONTEÚDO DOS SERVIÇOS INTERNOS ===== */
+.servico-bloco {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.servico-bloco.invertido {
+  flex-direction: row-reverse;
+}
+
+.servico-img img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.servico-texto {
+  flex: 1;
+}
+
+.servico-texto h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: rgb(255, 255, 255);
+}
+
+.servico-texto p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: rgb(255, 255, 255);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .servico-bloco,
+  .servico-bloco.invertido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .titulo-servico {
+    font-size: 26px;
+  }
+}
+
+
+/* ===== FUNDO DEGRADE DA ÁREA DE SERVIÇOS INTERNOS ===== */
+.blocos-servico-bg {
+  background: linear-gradient(to bottom, #1a2541, #445a7e);
+  padding: 80px 0px;
+  width: 100%;
+  margin-top: -110px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+.blocos-servico-bg h1 {
+  color: white;
+
+}
+
+
+.voltar-home {
+  text-align: center;
+  margin: 50px 0 0;
+}
+
+/* ===== BOTÃO VOLTAR PARA HOME ===== */
+.btn-voltar {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #445a7e;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 80, 150, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 80, 150, 0.35);
+}
+
+/* ===== CAIXA DOS ÍCONES DE REDES SOCIAIS ===== */
+.social-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 10px 0;
+  width: fit-content;
+  margin: 0 auto;
+  background: transparent;   /* remove fundo */
+  border: none;              /* remove o quadrado azul */
+  box-shadow: none;          /* remove sombra */
+}
+
+.social-box a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.social-box img {
+  width: 60px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.social-box a:hover {
+  transform: scale(1.15);
+  filter: brightness(1.1);
+}
+
+/* ===== ANIMAÇÕES DE ENTRADA DOS ELEMENTOS ===== */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 2s ease, transform 2.5s ease;
+}
+
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+  font-size: 2.6rem;   /* aumenta o tamanho */
+  font-weight: 700;    /* deixa mais forte como na index */
+  margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   📱 RESPONSIVIDADE PARA TABLETS E CELULARES
+   ========================================================= */
+
+   @media (max-width: 1024px) {
+
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .why-container {
+      flex-direction: column;
+    }
+  
+    .why-image,
+    .why-content {
+      width: 100%;
+    }
+  
+    .location-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+
+    /* ===== HERO IMAGEM AJUSTE MOBILE ===== */
+   .slide {
+  background-size: cover;      /* imagem cobre tudo */
+  background-position: center; /* centraliza */
+    }
+
+  
+/* ===== HEADER MOBILE AJUSTE ===== */
+.header .container {
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.header-contato {
+  align-items: center;
+  margin: 0;
+}
+
+.header-contato .hero-text {
+  margin-top: 0;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.header-contato .whatsapp-link {
+  margin-right: 0;   /* remove empurrão lateral */
+  padding: 0.5rem 1.2rem;
+}
+
+
+/* ===== HERO ALTURA MOBILE ===== */
+.hero {
+  min-height: 380px;
+  margin-top: 0;
+}
+
+.hero-content {
+  padding-top: 5rem;
+}
+
+
+    /* ===== HEADER ===== */
+    .header .container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .logo {
+      height: 140px;
+      margin-top: 0;
+    }
+  
+    .header-contato {
+      align-items: center;
+      margin-right: 0;
+    }
+  
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 420px;
+    }
+  
+    .hero-content {
+      padding-top: 6rem;
+      text-align: center;
+    }
+  
+    .hero h2 {
+      font-size: 1.6rem;
+    }
+  
+    .hero p {
+      font-size: 0.95rem;
+    }
+  
+    /* ===== CARDS ===== */
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  
+    .card {
+      min-height: auto;
+    }
+  
+    /* ===== TÍTULOS GRANDES ===== */
+    .services .container h3,
+    .location-info h2,
+    .why-content h2 {
+      font-size: 1.6rem;
+    }
+  
+    /* ===== WHY CHOOSE US ===== */
+    .why-content {
+      padding: 30px 20px;
+    }
+  
+    /* ===== MAPA ===== */
+    .location-address {
+      padding: 60px 20px;
+    }
+  
+    /* ===== REDES SOCIAIS ===== */
+    .social-box {
+      gap: 25px;
+    }
+  
+    .social-box img {
+      width: 42px;
+      height: 42px;
+    }
+  
+    /* ===== BOTÕES GRANDES ===== */
+    .btn-whatsapp {
+      padding: 14px 22px;
+      font-size: 0.95rem;
+    }
+  
+    /* ===== BLOCOS DE SERVIÇOS INTERNOS ===== */
+    .servico-texto h2 {
+      font-size: 20px;
+    }
+  
+    .servico-texto p {
+      font-size: 16px;
+    }
+  
+    .blocos-servico-bg {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-top: -60px;
+    }
+  }
+  
